@@ -1,0 +1,57 @@
+
+.skin-black{
+    @include allcolor(#302b2b);    
+    .site-logo{
+        background:url(../images/logo_black.svg) no-repeat;
+        img{
+            visibility: hidden;
+        }
+    }
+    .footer-columns #block-contactus .field--name-field-image{
+        background:url(../images/logo_black.svg) no-repeat;
+        img{
+            visibility: hidden;
+        }
+    }
+
+    /* -----------------view-lastest-comment-------------------- */
+    .view-lastest-comment .item-list{
+        li{
+            &:before{
+                background-image: url(../images/comment-black.png);
+            }
+        }
+    }
+
+     /* ----------------views-featured------------------ */
+    &.front .region-featured .view {
+        .views-field-title a{
+            &:hover{
+                color:$white-color;
+            }    
+        }
+    }
+
+    .block-article-health .group-health .views-field-title a{
+        &:hover{
+            color:$white-color;
+        }
+    }
+
+     @media (max-width:991px){
+       
+        .mobile-main-menu {
+            ul {
+                a {
+                    &:hover,
+                    &:focus {
+                        text-decoration: underline;
+                    }
+                    &.is-active {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

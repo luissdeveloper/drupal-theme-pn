@@ -1,0 +1,954 @@
+/* ---------------- search ----------------------- */
+.block-search{
+	float: right;
+	position: relative;
+	// min-width: 270px;
+	&:after{
+		content: '\f002';
+		@include fontawesome;
+		position: absolute;
+		top: 5px;
+		right: 15px;
+		// display: block;
+		font-size: 20px;
+
+	}
+	.form-search{
+		min-width: 270px;
+		padding: 5px 40px 5px 7px;
+		height: 30px;
+		// font-weight: 300;
+
+		&:focus{
+			border-color: $link-hover-color;
+		}
+	}
+	.form-actions .form-submit{
+		position: absolute;
+		top: 0;
+		right: 0;
+		background: none;
+		border: none;
+		font-size: 0;
+		padding: 15px 20px;
+		z-index: 50;
+	}
+}
+
+/* --------------------- block news ------------------------- */
+.block-article-news{
+	position: relative;
+	max-height: 365px;
+	@include clearfix;
+
+	.views-field-field-image, .views-field-field-video{
+		margin-bottom: 20px;
+	}
+	.views-field-title a{
+		margin-bottom: 5px;
+		font-size: $font-size-h4;
+	}
+
+	.owl-prev, .owl-next{
+		width: 25px;
+		height: 25px;
+		border: 3px solid $link-color;
+		&:after{
+			font-size: 16px;
+			padding-top: 2px;
+		}
+	}
+	.owl-prev{
+		right: 30px;
+	}
+	
+}
+
+/*----------------- button next pre default -------------------*/
+.slick-prev, .slick-next, .owl-prev, .owl-next{
+	border: 2px solid $link-color;
+	width: 18px;
+	height: 18px;
+	&:before{
+		display: none;
+	}
+	&:after{
+		content: '\f0da';
+		@include fontawesome;
+		display: inline-block;
+		color: $link-color;
+		font-size: 14px;
+		// margin-top: -3px;
+		// text-indent: 1px;
+	}
+	&:hover{
+		border-color: $link-hover-color;
+		&:after{
+			color: $link-hover-color; 
+		}
+	}
+}
+.slick-prev, .owl-prev{
+	&:after{
+		content: '\f0d9';
+	}
+}
+
+// ------ owl-carousel --------
+.owl-prev, .owl-next{
+	display: block;
+	position: absolute;
+	top: -65px;
+	right: 0;
+	left: auto;
+	font-size: 0;
+	text-align: center;
+}
+.owl-prev{
+	right: 25px;
+}
+/* ------------------------ end button next pre ---------------------- */
+
+/* ----------------------- date, like, views, comment ----------------------------- */
+.views-field-created, .views-field-comment-count, .views-field-uuid, .views-field-totalcount{
+	display: inline-block;
+}
+
+
+
+
+/* -------------------------------- main-content home page ------------------------------------ */
+#main-content{
+	padding-right: 0;
+}
+.block-home-quicktabs{
+	.ui-widget-content, .ui-widget-header{
+		background: none;
+		border: none;
+		padding: 0;
+	}
+
+	.ui-widget-content .view.view-block-tabs{
+		@include clearfix;
+		width: 60%;
+		float: left;
+		.views-row {
+			// float: left;
+			// width: 36%;
+			// padding-left: 15px;
+			position: relative;
+			padding-bottom: 10px;
+			// padding-top: 10px;
+			// border-bottom: 1px solid $bg-b-color;
+			margin-bottom: 10px;
+
+			
+			
+			/* row-fist */
+			&:first-child {
+				// width: 60%;
+				padding-left: 0;
+				padding-bottom: 0;
+				// padding-top: 0;
+				border-bottom: none;
+				margin-right: 10px;
+		
+				.views-field-field-image {
+					width: 100%;
+					float: none;
+					margin-right: 0;
+					margin-bottom: 20px;
+				}
+				.views-field-comment-count, .views-field-totalcount {
+					display: inline-block;
+				}
+				.views-field-created {
+					position: static;
+					display: inline-block;
+				}
+				.views-field-title a{
+					font-size: $font-size-h2;
+					margin-bottom: 5px;
+					// font-weight: 600;
+				}
+				.views-field-body p{
+					font-size: $font-size-16;
+
+				}
+
+			}
+
+		}
+	}
+
+	//--------menu: fashion, health, food, music----------
+	.ui-tabs-nav {
+		border-bottom: 1px solid $link-color;
+		border-radius: 0;
+		margin-bottom: 30px;
+		font-family: $font-body;
+		li.ui-state-active{
+			background: $link-color;
+			a.ui-tabs-anchor{
+				color: $white-color;
+
+			}
+		}
+		li{
+			background: $bg-b-color;
+			margin-right: 4px;
+			border-radius: 0;
+			border: none;
+			@media (max-width: 767px) {
+				margin-top: 10px;
+			}
+			a.ui-tabs-anchor{
+				color: $link-color;
+				font-size: $font-size-h4;
+				padding: 4px 25px;
+				font-weight: 600;
+			}
+			&:hover{
+				background: $link-color;
+				a{
+					color: $white-color;
+				}
+			}
+
+		}
+	}
+
+}
+.view-block-tabs .slider{
+	// position: relative;
+	// width: 60%;
+	// float: left;
+	.slick-slide {
+		position: relative;
+	}
+	.slick-prev, .slick-next{
+		&:after{
+			margin-top: 0;
+		}
+	}
+	.views-field-field-image{
+		margin-bottom: 20px;
+	}
+	.views-field-title a{
+		// font-weight: 700;
+		font-size: $font-size-h2;
+		margin-bottom: 5px;
+
+	}
+	.views-field-created{
+		&:before{
+			color: $gray-base;
+		}
+	}
+
+	.views-field-comment-count{
+		margin-bottom: 17px;
+	}
+
+	.views-field-body{
+		font-weight: 300;
+	}
+
+	.views-field-totalcount{
+		font-size: $font-size-16; 
+		color: $link-color;
+		margin-left: 15px;
+		font-weight: 700;
+		margin-left: 0;
+		padding-left: 25px;
+		&:before{
+			margin-right: 35px;
+			display: none;
+		}
+		&:after{
+			left: 0;
+			font-size: $font-size-16;
+			top: 3px;
+		}
+	}
+	
+	.slick-prev, .slick-next{
+		bottom: 0;
+	    left: auto;
+	    position: absolute;
+	    right: 0;
+	    top: auto;
+	    border-color: $next-pre-color;
+	    background: $white-color;
+	    &:after{
+	    	color: $next-pre-color;
+	    }
+	    &:hover{
+	    	border-color: $link-color;
+	    	&:after{
+	    		color: $link-color;
+	    	}
+	    }
+	}
+	.slick-prev{
+		right: 25px;
+	}
+}
+#block-views-block-tabs-list-block-1 {
+	.view-tabs-list .views-row {
+		&:last-child {
+			border-bottom: none;
+			margin-bottom: 0;
+		}
+	}
+}
+.block  .view-tabs-list{
+	width: 40%;
+	float: right;
+	padding-left: 15px;
+	.views-row{
+		@include clearfix;
+		clear: both;
+		border-bottom: 1px solid $bg-b-color;
+		padding: 10px 0;
+		position: relative;
+		&:first-child{
+			padding-top: 0;
+		}
+		&:last-child {
+			margin-bottom: 10px;
+		}
+	}
+	.views-field-field-image{
+		float: left;
+		margin-right: 10px;
+	}
+	.views-field-title {
+		// min-height: 31px;
+		a{
+			font-size: $font-size-h5;
+			font-weight: 600;
+			color: $gray-base;
+			display: block;
+			transition: unset;
+			line-height: 1.3;
+			
+			&:hover{
+				color: $link-hover-color;
+				text-decoration: underline;
+			}
+		}
+	}
+	.views-field-body {
+		line-height: 1.5;
+		p{
+			font-size: $font-size-12;
+			margin-bottom: 0;
+			white-space: nowrap;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		}
+	}
+	.views-field-created{
+		position: absolute;
+		bottom: 10px;
+		left: auto;
+		right: auto;
+
+		&:before{
+			font-size: 11px;
+		}
+		
+	}
+}
+
+#block-views-block-article-block-block-5{
+	clear: both;
+}
+
+
+/* ---------------------------- end main-content ------------------------------ */
+
+
+/* ------------------------------- sidebar ------------------------------------- */
+.sidebar{
+	padding-left: 30px;
+	.block-views{
+		@include clearfix;
+		// margin-bottom: 50px;
+	}
+	.slider .slick-track {
+		height: 313px;
+	}
+}
+
+/* --------- Advertise Here --------- */
+#block-ad {
+	h1{
+		height: 260px;
+		font-size: $font-size-30;
+		background: $bg-panel-color;
+		padding-top: 115px;
+		color: $bg-social-color;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+}
+
+/* ---------- Most View ---------- */
+
+.block-article-most-views{
+	.views-field-field-image{
+		margin-bottom: 20px;	
+	}
+	.views-field-field-video {
+		margin-bottom: 20px;
+	}
+	.views-field-title a{
+		margin-bottom: 5px;
+	}
+	.views-field-comment-count{
+		margin-left: 10px;
+	}
+
+	.slider{
+		position: relative;
+		
+		.slick-prev, .slick-next{
+			bottom: 0;
+		    left: auto;
+		    position: absolute;
+		    right: 0;
+		    top: auto;
+		    background: $white-color;
+		}
+		.slick-prev{
+			right: 25px;
+		}
+	}
+}
+
+/* ----------- Recent Posts ----------- */
+#block-views-block-article-block-block-8{
+	// .recent-posts .views-row .views-field-field-image + .views-field-field-video {
+	// 	display: block;
+	// }
+	.views-row{
+		clear: both;
+		display: block;
+		@include clearfix;
+		position: relative;
+		margin-bottom: 20px;
+		.views-field-field-video{
+			display: block;
+		}
+
+	}
+	.views-field-field-image, .views-field-field-video{
+		float: left;
+		margin-bottom: 0;
+		margin-right: 10px;
+	}
+	.recent-post-group{
+		.views-field-title a{
+			line-height: 1.2;
+			font-size: $font-size-h5;
+			display: block;
+		}
+		.views-field-nothing{
+			font-size: $font-size-10;
+			margin-bottom: 7px;
+		}
+
+		.views-field-created{
+			font-size: $font-size-12;
+			display: inline-block;
+			clear: right;
+			float: left;
+			position: absolute;
+			bottom: 0;
+			left: auto;
+			right: auto;
+		}
+		
+		.views-field-comment-count{
+			font-size: $font-size-12;
+			display: inline-block;
+			float: right;
+			color: #010101;
+			position: absolute;
+			bottom: 0;
+			left: auto;
+			right: 0;
+		}
+	}
+}
+
+/* --------- block-keepconnected ----------- */
+#block-keepconnected{
+	margin-bottom: 50px;
+	ul{
+		padding: 0;
+	}
+	.field--name-body {
+		
+		li{
+			width: 33.3333%;
+			min-heightx: 85px;
+			float: left;
+			padding-right: 1px;
+			margin-bottom: 1px;
+			position: relative;
+			height: 85px;
+			
+			a{
+				display: inline-block;
+				background: $facebook-color;
+				text-align: center;
+				width: 100%;
+				height: 85px;
+				position: relative;
+				text-decoration: none;
+				font-weight: 600;
+
+				display: -webkit-box;
+				display: -webkit-flex;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-flex-wrap: wrap;
+				-ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+				-webkit-box-pack: center;
+			    -webkit-justify-content: center;
+			    -ms-flex-pack: center;
+			    justify-content: center;
+
+				&:before{
+					content: '\f09a';
+					@include fontawesome;
+					font-size: 45px;
+					color: $white-color;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+
+				}
+				em{
+					opacity: 0;
+					font-size: $font-size-h4;
+					color: $white-color;
+					z-index: 30;
+					align-items: center;
+				}
+
+				&:hover{
+					em{
+						align-self: center;
+						opacity: 1;
+					}
+					&:after{
+						content: '';
+						background: rgba($facebook-color, 0.5);
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+		}
+		
+		.social-twitter{
+			background: $twitter-color;
+			&:before{
+				content: '\f099';	
+			}
+			&:hover{
+				&:after{
+					background: rgba($twitter-color, 0.5);
+				}
+			}
+		}
+		.social-plus{
+			background: $google-plus-color;
+			&:before{
+				content: '\f0d5';		
+			}
+			&:hover{	
+				&:after{
+					background: rgba($google-plus-color, 0.5);
+				}
+			}
+		}
+		.social-youtube{
+			background: $youtube-color;
+			&:before{
+				content: '\f04b';		
+			}
+			&:hover{
+				&:after{
+					background: rgba($youtube-color, 0.5);
+				}
+			}
+		}
+		.social-rss{
+			background: $rss-color;
+			&:before{
+				content: '\f09e';		
+			}
+			&:hover{
+				&:after{
+					background: rgba($rss-color, 0.5);
+				}
+			}
+		}
+		.social-wechat{
+			background: $bg-social-color;
+			&:before{
+				content: '\f086';
+				// background: url(../images/icon-chat.png)no-repeat;
+			}
+			&:hover{
+				&:after{
+					background: rgba($bg-social-color, 0.5);
+				}
+			}
+		}
+	}
+}
+
+/* --------- block-lastest comment ----------- */
+#block-views-block-lastest-comment-block-1{
+	clear: both;
+}
+
+/* --------- videos-fashion ---------- */
+.block-article-video-fashion, .view-video{
+	.views-field-field-video a{
+		position: relative;
+		display: inline-block;
+	
+		&:before{
+            content: '';
+            background: url(../images/icon-play.png);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: inline-block;
+            width: 46px;
+            height: 46px;
+            margin-top: -50px;
+            margin-left: -20px;
+        }
+	}
+}
+.block-article-video-fashion {
+	.views-row {
+		position: relative;
+	}
+	.views-field-title {
+		position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    background: rgba(0, 0, 0, 0.8);
+	    width: 100%;
+	    padding: 15px 20px;
+	    font-size: $font-size-16;
+	    a{
+	    	color: $white-color;
+	    }
+	    
+	}
+	.views-field-field-video {
+		&:before {
+	    	margin-top: -50px;
+	    }
+	}
+}
+
+/* -------------------------------- end sidebar ------------------------------------- */
+
+/* ----------- fashion ------------- */
+#block-fashion {
+	.field--name-field-image{
+		margin-bottom: 0;
+	}
+	img{
+		height: 305px;
+	}
+}
+
+//----- page contact -----
+.contact .block {
+	h2{
+		margin-bottom: 65px;
+		color: $link-hover-color;
+		font-size: $font-size-32;
+		border: none;
+
+		.block-title{
+			background: none;
+			color: $link-color;
+			padding: 0;
+		}
+	}
+
+}
+#block-contact{
+	width: 50%;
+	float: left;
+	padding-left: 70px;
+	
+	h2{
+		margin-bottom: 65px;
+		color: $link-hover-color;
+		font-size: $font-size-32;
+		border: none;
+		.block-title{
+			background: none;
+			color: $link-color;
+		}
+	}
+	p{
+		font-weight: 300;
+		color: $title-color;
+		font-size: $font-size-16;
+		margin-bottom: 25px;
+		&:before{
+			margin-right: 10px;
+			@include fontawesome;
+			font-size: 28px;
+			color: $link-hover-color;
+			vertical-align: bottom;
+			width: 25px;
+		}
+		&:nth-child(1){
+			&:before{
+				content: "\f043";
+			}
+		}
+		&:nth-child(2){
+			&:before{
+				content: "\f095";
+			}
+		}
+		&:nth-child(3){
+			&:before{
+				content: "\f0e0";
+			}
+		}
+	}
+}
+
+/* Contact */
+.contact .block-page-title-block{
+	width: 50%;
+	float: right;
+	h2{
+		border: none;
+		font-size: $font-size-32;
+	}
+	h1.page-title{
+		font-size: $font-size-32;
+		color: $link-hover-color;
+		margin-bottom: 30px;
+	}
+}
+
+.block-views-blockvideo-block-2 .view{
+	width: 100%;
+	// float: right;
+	margin-top: 60px;
+	.views-view-grid.cols-2 .row-1 {
+		width: 30%;
+		float: left;
+		div.views-field-title-1 {
+			min-height: auto;
+			padding: 10px 15px;
+			width: 100%;
+			a{
+				font-size: $font-size-16;
+			}
+		}
+		.views-col {
+			margin-bottom: 30px;
+		}
+		&:before{
+			margin-top: -35px;
+		}
+	}
+	.row-2 {
+		width: 70%;
+		// float: right;
+		clear: none;
+		div.views-field-title-1 {
+			width: 100%;
+			padding: 20px 15px;
+			min-height: auto;
+			a{
+				font-size: $font-size-h2;
+			}
+		}
+		img{
+			width: 100%;
+			height: 482px;
+		}
+		.views-field-field-video a{
+			&:before{
+				background: url(../images/icon-play-lg.png) no-repeat!important;
+				width: 110px!important;
+				height: 110px!important;
+				margin-left: -55px;
+				margin-top: -55px;
+			}
+		}
+
+	}
+	.views-row {
+		padding: 0 15px;
+		&:before,&:after{
+			display: none;
+		}
+	}
+	.views-view-grid {
+		margin: 0 -15px;
+		&:before,&:after{
+			display: none;
+		}
+	}
+	.views-col {
+		width: 100%!important;
+		padding: 0;
+		position: relative;
+		.views-field-title-1 {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+	}
+	.views-field-title-1 {
+		background: rgba($gray-base, 0.8);
+		a{
+			font-weight: 600;
+			color: $white-color;
+		}
+	}
+	.views-field-field-video a{
+		@extend .extend-video;
+		display: block;
+		
+		a{
+			display: block;
+
+		}
+		
+	}
+}
+.hightlight, #main-content{
+
+	.view-video {
+		margin-bottom: 50px;
+		article{
+			.field--name-field-video {
+				@extend .extend-video;
+				&:before {
+					margin-top: -25px;
+					margin-left: -25px;
+				}
+			}
+			.field--type-created {
+				display: none;
+			}
+		}
+		.views-row {
+			&:last-child{
+				.views-col {
+					margin-bottom: 0;
+				}
+			}
+		}
+		
+	}
+}
+
+.sidebar .view-video {
+	.views-col {
+		width: 100%!important;
+		.views-field-field-video {
+			&:before{ margin-top: -45px; }
+		}
+		.views-field-title {
+			position: absolute;
+		    bottom: 0;
+		    left: 0;
+		    background: rgba($gray-base, 0.8);
+		    width: 100%;
+		    padding: 15px 20px;
+		    font-size: $font-size-16;
+		    a{ 
+		    	color: $white-color;
+		    	&:hover{
+		    		// color: $link-hover-color;
+		    	}
+		    }
+
+		}
+		img{
+	    	width: 100%;
+	    }
+	}
+
+}
+
+/* ----------------- view vote ------------------- */
+.view-vote { display: none;}
+#block-views-block-vote-block-2 .view-vote {display: block;}
+
+/* Advertise page sport*/
+#block-views-block-ad-block-3-2 .view-ad {
+	margin-bottom: 0;
+	.slides li {
+		position: relative;
+		&:before {
+			content: '';
+			background: rgba(0, 0, 0, 0.6);
+		    width: 100%;
+		    height: 100%;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		}
+		.views-field-body {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			text-align: center;
+			@include translate(-50%,-50%);
+			p{
+				color: $white-color;
+				margin-bottom: 0;
+			    font-size: $font-size-36;
+			    color: #fff;
+			    font-style: italic;
+			    &:nth-of-type(2){
+			    	font-size: $font-size-16;
+			    }
+			}
+		}
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+
+// Core variables and mixins
+@import "config/variables";
+@import "config/mixins";
+
+
+.header{
+	.container{
+		padding-top:25px;
+		padding-bottom:25px;
+	}
+	.block-views{
+		margin-top: 0;
+	}
+}
+.site-logo{
+	padding: 0 !important;
+	margin: 18px 0 ;
+	img{
+		max-width: 238px;
+	}
+}
+.primary-main-menu{
+	&.wp-fix{
+		top: 0;
+		position: fixed;
+	    width: 100%;
+    	@include transition(top 0.3s ease-in-out);
+    	z-index: 99;
+	}
+}
+.scroll{
+	padding-top: 49px;
+	.primary-main-menu{
+	    position: fixed;
+	    width: 100%;
+    	top: -49px;
+    	@include transition(top 0.3s ease-in-out);
+    	z-index: 99;
+    	&.wp-fix{
+    		top: 0;
+    	}
+	}
+	.toolbar-fixed &{
+		.primary-main-menu{
+			&.wp-fix{
+	    		top: 80px;
+	    	}		
+		}
+	}
+    
+}

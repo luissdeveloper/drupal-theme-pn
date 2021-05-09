@@ -1,0 +1,116 @@
+/*------------------------------------------------------------------*/
+/* Typography */
+
+html{
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    font-size: 100%;
+}
+
+body {
+    font-size: $font-size-base;
+    color: $text-color;
+    font-family: $font-body;
+    font-weight: 400;
+    background: #fff;
+}
+
+h1, h2, h3, h4, h5 {
+    color: $title-color;
+    margin: 0 0 20px;
+}
+
+h2 {}
+
+h3 {}
+
+a {
+    @include transition(all 0.2s ease-out);
+    color: $link-color;
+    outline: none;
+    &:hover, &:focus {
+        color: $link-hover-color;
+        outline: none;
+        // text-decoration: none;
+    }
+}
+
+strong {
+    font-weight: bold;
+}
+
+ul, ol {
+    margin-bottom: 15px;
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+p {
+    margin-bottom: 15px;
+}
+
+address {}
+
+label {}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input, select, textarea {
+    max-width: 100%;
+    // min-width: 100%;
+    border: 1px solid $border-color;
+    // border: none;
+    color: $border-color;
+    background: $white-color;
+    font-size: $font-size-16;
+    min-height: 30px;
+    padding: 8px;
+
+    &:focus, &:active {
+        outline: none;
+    }
+}
+
+iframe {
+    max-width: 100%;
+}
+
+ul.menu {
+    margin: 0;
+    li{
+        float: left;
+        margin: 0 22px;
+        &:last-child {
+            margin-right: 0;
+        }
+        &:first-child{
+            margin-left: 0;
+        }
+        a{
+            color: $title-color;
+            &:hover, &:focus{
+                color: $link-color;
+            }
+        }
+        // a.is-active{
+        //     color: $link-color;
+        // }
+    }
+   
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.slider{
+    font-family: $font-body;
+}
+
+
+
+

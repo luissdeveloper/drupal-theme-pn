@@ -1,0 +1,202 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{%
+  set classes = [
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {% if label %}
+    <h2{{ title_attributes }}><span class="block-title">{{ label }}</span></h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+  
+    <link
+      href="/themes/zetraz/templates/lbg-audio8-html5-radio_ads/audio8_html5/audio8_html5.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <!-- and new libraries to use lastfm -->
+    <script
+      src="/themes/zetraz/templates/lbg-audio8-html5-radio_ads/audio8_html5/js/lastfm.api.md5.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/themes/zetraz/templates/lbg-audio8-html5-radio_ads/audio8_html5/js/lastfm.api.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/themes/zetraz/templates/lbg-audio8-html5-radio_ads/audio8_html5/js/lastfm.api.cache.js"
+      type="text/javascript"
+    ></script>
+    <!-- and new libraries to use lastfm -->
+    <script
+      src="/themes/zetraz/templates/lbg-audio8-html5-radio_ads/audio8_html5/js/jquery.mousewheel.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/themes/zetraz/templates/lbg-audio8-html5-radio_ads/audio8_html5/js/jquery.touchSwipe.min.js"
+      type="text/javascript"
+    ></script>
+    <script
+      src="/themes/zetraz/templates/lbg-audio8-html5-radio_ads/audio8_html5/js/audio8_html5.js"
+      type="text/javascript"
+    ></script>
+ 
+
+
+
+
+
+    <script>
+      jQuery(function () {
+        jQuery("#lbg_audio8_html5_shoutcast_1").audio8_html5({
+          skin: "darkHover",
+          playerHeight: 94,
+          titleWidth: 200,
+          playerBackgroundColor: "#f5f5f5",
+          playerBackgroundOpacity: 100,
+          sticky: true,
+          bannerWidth: 728,
+          bannerHeight: 90,
+          bannerIntervalSeconds: 5,
+          bannerLinkTarget: "darkHover",
+          initialVolume: 0.8,
+          autoPlay: true,
+          volumeOffColor: "#cccccc",
+          volumeOnColor: "#9f9f9f",
+          songTitleColor: "#000000",
+          radioStationColor: "#000000",
+          imageBorderColor: "#f5f5f5",
+          minimizeButtonText: "abrir / cerrar",
+          facebookAppID: "",
+          facebookShareTitle:
+            "SHOUT - HTML5 Radio Player With Ads - ShoutCast and IceCast Support",
+          facebookShareDescription:
+            "A top-notch responsive HTML5 Radio Player with ads support, compatible with all major browsers and mobile devices.",
+          pathToAjaxFiles:
+            "/themes/zetraz/templates/lbg-audio8-html5-radio_ads/audio8_html5/",
+          nowPlayingInterval: 30,
+          grabLastFmPhoto: false,
+          grabStreamnameAndGenre: true,
+          noImageAvailable:
+            "/themes/zetraz/templates/lbg-audio8-html5-radio_ads/audio8_html5/1.png",
+          translateRadioStation: "Radio : Pauto Noticias",
+          translateReadingData: "leyendo datos...",
+          translateAllRadioStations: "TODAS LAS ESTACIONES DE RADIO",
+          popupWidth: 1100,
+          popupHeight: 500,
+          barsColor: "#000000",
+          showGradientOverBars: true,
+          showBanner: false,
+          showVolume: true,
+          showFacebookBut: false,
+          showTwitterBut: true,
+          showPopupBut: false,
+          showRadioStation: true,
+          showTitle: false,
+          showPlaylistBut: false,
+          playlistTopPos: 5,
+          playlistBgColor: "#f5f5f5",
+          playlistRecordBgOffColor: "#ffffff",
+          playlistRecordBgOnColor: "#d1d1d1",
+          playlistRecordBottomBorderOffColor: "#bbbbbb",
+          playlistRecordBottomBorderOnColor: "#bbbbbb",
+          playlistRecordTextOffColor: "#777777",
+          playlistRecordTextOnColor: "#000000",
+          categoryRecordBgOffColor: "#222222",
+          categoryRecordBgOnColor: "#333333",
+          categoryRecordBottomBorderOffColor: "#2f2f2f",
+          categoryRecordBottomBorderOnColor: "#2f2f2f",
+          categoryRecordTextOffColor: "#777777",
+          categoryRecordTextOnColor: "#00b4f9",
+          numberOfThumbsPerScreen: 7,
+          playlistPadding: 18,
+          firstCateg: "TODAS LAS ESTACIONES DE RADIO",
+          showCategories: false,
+          selectedCategBg: "#555555",
+          selectedCategOffColor: "#FFFFFF",
+          selectedCategOnColor: "#00b4f9",
+          selectedCategMarginBottom: 12,
+          showSearchArea: true,
+          searchAreaBg: "#555555",
+          searchInputText: "search...",
+          searchInputBg: "#cccccc",
+          searchInputBorderColor: "#333333",
+          searchInputTextColor: "#333333",
+          showPlaylistNumber: true,
+        });
+      });
+    </script>
+    <div class="audio8_html5_sticky">
+      <div class="audio8_html5">
+        <audio id="lbg_audio8_html5_shoutcast_1" preload="metadata">
+          <div class="xaudioplaylist">
+            <ul>
+              <li class="xradiostream">
+                https://ideasllaneras.ml/radio/8000/radio.mp3?1602055762
+              </li>
+              <li class="xbanners"></li>
+            </ul>
+            <!-- <ul>
+              <li class="xradiostream">http://tunein.defjay.com:80/;</li>
+              <li class="xcategory">Classic_1;Rock</li>
+            </ul>
+            <ul>
+              <li class="xradiostream">http://212.18.63.135:9034/;</li>
+              <li class="xstation">Rock FM</li>
+              <li class="xbanners"></li>
+            </ul>
+            <ul>
+              <li class="xradiostream">http://194.232.200.156:80/;</li>
+              <li class="xbanners"></li>
+            </ul> -->
+          </div>
+          No HTML5 audio playback capabilities for this browser. Use
+          <a href="https://www.google.com/intl/en/chrome/browser/"
+            >Chrome Browser!</a
+          >
+        </audio>
+      </div>
+      <br style="clear: both" />
+      <div class="audio8_html5_min audio8_html5_arrow_down"></div>
+    </div>
+
+</div>

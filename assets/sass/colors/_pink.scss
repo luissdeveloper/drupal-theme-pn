@@ -1,0 +1,27 @@
+
+.skin-pink{
+    @include allcolor(#f05e6b);    
+    .site-logo{
+        background:url(../images/logo.svg) no-repeat;
+        img{
+            visibility: hidden;
+        }
+    }
+    
+    .footer-columns #block-contactus .field--name-field-image{
+        background:url(../images/logo.svg) no-repeat;
+        img{
+            visibility: hidden;
+        }
+    }
+
+     /* -----------------view-lastest-comment-------------------- */
+    .view-lastest-comment .item-list{
+        li{
+            &:before{
+                background-image: url(../images/comment-pink.png);
+            }
+        }
+    }
+
+}

@@ -1,0 +1,29 @@
+name: ZetraZ
+type: theme
+base theme: classy
+description: 'A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
+package: Core
+version: VERSION
+core: 8.x
+libraries:
+  - zetraz/global-styling
+regions:
+    headline: 'Headline'
+    header: 'Header'
+    main_menu: 'Main Menu'
+    primary_menu: 'Primary menu'
+    secondary_menu: 'Secondary menu'
+    slideshow: 'Slideshow'
+    featured: 'Featured'
+    highlighted: 'Highlighted'
+    content: 'Content'
+    sidebar_first: 'Sidebar first'
+    panel_first: 'Panel first'
+    panel_second: 'Panel second'
+    panel_third: 'Panel third'
+    footer_firstcolumn: 'Footer first column'
+    footer_secondcolumn: 'Footer second column'
+    footer_thirdcolumn: 'Footer third column'
+    footer: Footer
+
+

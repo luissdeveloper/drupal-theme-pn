@@ -1,0 +1,48 @@
+global-styling:
+  version: 8.x
+  css:
+    theme:
+      assets/includes/flexslider2/flexslider.css: {}
+      assets/includes/owl-carousel/owl.carousel.css: {}
+      assets/includes/slick/slick/slick.css: {}
+      assets/css/style.css: {}
+      assets/css/style-rtl.css: {}
+      assets/css/colors.css: {}
+      assets/css/menu-fix.css: {}
+  js:
+    assets/js/jquery.fixes.js: {}
+    assets/includes/bootstrap/js/bootstrap.js: {}
+    assets/includes/owl-carousel/owl.carousel.js: {}
+    # assets/includes/slick/slick/slick.js: {}
+    # assets/js/jquery.smooth-scroll.js: {}
+    assets/js/jquery.cookie.js: {}
+    assets/js/zetraz.js: {}
+    assets/js/carousel.js: {}
+    assets/includes/flexslider2/jquery.flexslider.js: {}
+    assets/js/jquery.matchHeight.js: {}
+
+
+  dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+skins-menu:
+  version: 1.x
+
+  js:
+    assets/includes/skins-menu/skins_menu.js: {}
+    assets/js/jquery.cookie.js: {}
+  dependencies:
+  - core/jquery
+  - core/drupal
+  - core/drupalSettings
+
+pautonoticias-player:
+ version: 1.x
+ css:
+   theme:
+     assets/audioplayerone/custom.css: {}
+
+     

@@ -1,0 +1,507 @@
+/* ------- title page --------- */
+.h2{
+	border-color: transparent transparent $link-color transparent;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    font-size: $font-size-h4;
+    font-weight: 600;
+    line-height: 1;
+    position: relative;
+    margin-bottom: 30px;
+	span.block-title{
+		background: $link-color;
+	    color: $white-color;
+	    display: inline-block;
+	    margin-top: -1px;
+	    padding: 8px 15px;
+	}
+}
+
+.front h2, .block > h2{
+	@extend .h2;
+}
+h1.page-title {
+	display: none;
+}
+
+.more-link a {
+	display: block;
+	background: $link-color;
+	text-align: center;
+	padding: 10px 0;
+	color: $white-color;
+	margin-bottom: 90px;
+	font-weight: 600;
+	&:hover{
+		background: $link-hover-color;
+		text-decoration: none;
+	}
+}
+
+.sidebar h2{
+	font-size: $font-size-h4;
+	@extend .h2;
+	span{
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+/* --------- end title page ---------- */
+
+
+.not-front .content.col-lg-8.col-md-8 .view{
+	.views-row {
+		// position: relative;
+		margin-bottom: 50px;
+		.views-field-title a{
+			font-family: $font-primary;
+			font-size: $font-size-32;
+			margin-bottom: 7px;
+		}
+		.views-field-name {
+			text-transform: uppercase;
+			font-size: $font-size-10;
+			margin-bottom: 15px;
+			display: inline-block;
+			margin-right: 15px;
+			span.field-content{
+				color: $link-color;
+			}
+		}
+		.views-field-comment-count, .like-count{
+			display: inline-block;
+			// margin-left: 30px;
+			color: $menu-color;
+			text-transform: uppercase;
+			font-size: $font-size-10;
+
+		}
+		.views-field-comment-count{
+			font-size: $font-size-10;
+			position: relative;
+			padding-left: 25px;
+			&:before{
+				content: "\f086";
+				@include fontawesome;
+				font-size: 15px;
+				color: $comment-color;
+				// margin-right: 10px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+		.views-field-created {
+			&:before{ display: none; }
+			position: absolute;
+			background: $bg-social-color;
+			padding: 14px 15px;
+			top: 10px;
+			color: $white-color;
+			font-size: $font-size-10;
+			text-transform: uppercase;
+			text-align: center;
+			display: block;
+		    max-width: 55px;
+		    overflow: hidden;
+
+		}
+		.views-field-group {
+			position: relative;
+			.views-field-field-video a{
+				@extend .extend-video;
+				display: block;
+			
+				&:after {
+					display: none;
+				}
+			}
+
+		}
+		.views-field-field-image, .views-field-field-video {
+			margin-bottom: 25px;
+		}
+		.views-field-body, .views-field-body-1 {
+			margin-left: 70px;
+			font-family: $font-primary;
+			font-weight: 300;
+			color: $text-l3-color;
+			font-size: $font-size-base;
+			p{
+				margin-bottom: 15px;
+			}
+		}
+		.views-field-body-1 {
+			padding-left: 30px;
+			margin-bottom: 15px;
+			position: relative;
+			&:before{ 
+				content: '';
+				background: url(../images/quote.png)no-repeat;
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+		.views-field-view-node {
+			text-align: left;
+			a{
+				&:after{ display: none; }
+				display: inline-block;
+				background: $bg-social-color;
+				color: $white-color;
+				padding: 5px 15px;
+				&:hover{ background: $link-color; }
+			}
+		}
+
+		.views-field-field-tags {
+			display: inline-block;
+			margin-left: 25px;
+			a{
+				display: inline-block;
+				font-size: $font-size-10;
+				text-transform: uppercase;
+				color: $menu-color;
+				position: relative;
+				
+				&:first-child {
+					padding-left: 25px;
+					&:before{
+						content: '\f02b';
+						@include fontawesome;
+						font-size: 15px;
+						color: $comment-color;
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+
+
+}
+
+.comment-count{
+	font-size: $font-size-10;
+	position: relative;
+	padding-left: 25px;
+	&:before{
+		content: "\f086";
+		@include fontawesome;
+		font-size: 15px;
+		color: $comment-color;
+		// margin-right: 10px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+}
+
+.field--name-created {
+	position: absolute;
+	background: $bg-social-color;
+	padding: 14px 15px;
+	top: 90px;
+	color: $white-color;
+	font-size: $font-size-10;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+    max-width: 55px;
+    overflow: hidden;
+}
+
+.field--name-field-categ {
+	display: inline-block;
+	margin-left: 25px;
+	background: $white-color;
+	padding: 4px 10px 6px 10px;
+	.field__item{
+		display: inline-block;
+		margin-right: 10px;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	
+	a{
+		display: inline-block;
+		font-size: $font-size-10;
+		text-transform: uppercase;
+		color: $menu-color;
+		position: relative;
+		padding-left: 25px;
+		text-decoration: none;
+		&:hover:after{
+			display: inline-block;
+		}
+		&:after{
+			position: absolute;
+			width:calc(100% - 25px);
+			width:-moz-calc(100% - 25px);
+			width:-webkit-calc(100% - 25px);
+			height: 1px;
+			background: $menu-color;
+			content: "";
+			display: none;
+			bottom: 1px;
+			right: 0;
+
+		}
+		&:before{
+			content: '\f02b';
+			@include fontawesome;
+			font-size: 15px;
+			color: $comment-color;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+
+
+
+.field--name-field-image, .field--name-field-video{
+	margin-bottom: 23px;
+}
+
+// #main-content .field--name-body{
+// 	padding-left: 70px;
+// }
+
+ul.inline{
+	margin-bottom: 0;
+	li{
+		padding: 0;
+		display: none;
+		a{
+			display: inline-block;
+			padding: 7px 15px;
+			background: $bg-social-color;
+			color: $white-color;
+			margin-right: 10px;
+			text-transform: uppercase;
+			font-weight: 600;
+			&:hover{
+				background: $link-color;
+				text-decoration: none;
+			}
+		}
+		&:last-child{
+			a{
+				margin-right: 0;
+			}
+		}
+	}
+	li.node-readmore {
+		display: block;
+		margin-bottom: 10px;
+	}
+}
+
+.label{
+	color: $text-color;
+	font-size: $font-size-h5;
+}
+
+
+
+/* --------------------------------------------------------- Form ------------------------------------------------------ */
+form .form-submit{
+	border-color: $link-color;
+	background: $link-color;
+	padding: 10px 50px;
+	font-weight: 700;
+	width: auto;
+	color: $white-color;
+	@include transition(all 0.3s ease-out);
+	&:hover{
+		background: $link-hover-color;
+		// border: 1px solid $link-color;
+		color: $white-color;
+	}
+}
+//--------- form register --------------
+.user-register-form{
+	margin-bottom: 30px;
+	label{
+		display: block;
+	}
+	.form-checkbox, .option{
+		min-height: unset;
+		display: inline-block;
+	}
+}
+
+//----------comment-form--------------
+.comment-comment-form{
+	padding-left: 20px;
+	@include comment-form;
+	input, textarea{
+		border: none;
+	}
+	.form-submit {
+		width: 100%;
+		text-transform: uppercase;
+		border: none;
+		margin-bottom: 35px;
+	}
+}
+
+//---------- contact-form ------------
+.contact-form{
+	width: 50%;
+	float: right;
+	padding-right: 70px;
+
+	label{
+		font-weight: 300;
+		color: $title-color;
+		font-size: $font-size-16;
+	}
+	input, textarea{
+		background: rgba($link-color, 0.2);
+		// border: 1px solid rgba($link-color, 0.2);
+		border: none;
+		@include border-radius(3px);
+		color: $title-color;
+		&:focus{
+			// background: none;
+			// border: 1px solid $link-color;
+			outline: none;
+
+		}
+	}
+	.form-item{
+		margin-bottom: 30px;
+		margin-top: 0;
+	}
+	.form-submit{
+		border: 1px solid $link-hover-color;
+		color: $white-color;
+		background: $link-color;
+		text-transform: uppercase;
+		
+	}
+}
+
+/* comment */
+.node-article, .node--type-video, .comment {
+	.comment-amount {
+		border: none;
+		margin-top: 40px;
+		border: none;
+		margin-bottom: 20px;
+	}
+}
+
+.comment {
+	.messages--error {
+		margin-bottom: 15px;
+	}
+	.node-detail-infomation {
+		margin-bottom: 30px;
+	}
+}
+.messages {
+	margin-bottom: 15px;
+}
+
+
+/* page showcase */
+.showcase .main .view-showcase {
+	margin-top: 40px;
+	article.node--type-showcase {
+		position: relative;
+		footer.node__meta{
+			display: none;
+		}
+		.field--name-field-image {
+			padding-bottom: 15px;
+		}
+	}
+	.view-content{
+		@include display-flex;
+		@include flex-row;
+		@include flex-col-xs;
+		// margin: 0 -15px;
+		
+	}
+	.views-row {
+		@include flex-width-col-xs(25%);
+		padding: 0 15px;
+		margin-bottom: 65px;
+		// float: left;
+		// width: 25%;
+	}
+	h2 {
+		font-size: $font-size-h3;
+		font-weight: 600;
+		position: absolute;
+		bottom: 5px;
+		left: 0;
+		a{
+			color: $gray-base;
+			&:hover{
+				color: $link-hover-color;
+			}
+		}
+
+	}
+}
+
+/* page 404 */
+article[about="/404-not-found"] {
+	text-align: center;
+	// padding: 175px 200px;
+	padding-top: 70px;
+	background: $link-color;
+	margin-bottom: 50px;
+	h2, p, a{
+		color: $white-color;
+	}
+	h2 { font-size: 200px;}
+	p { font-size: 50px; margin-bottom: 90px; }
+	a { 
+		background: $white-color;
+		color: $link-color;
+		padding: 30px 40px;
+		text-transform: uppercase;
+		font-family: $font-primary;
+		font-weight: 700;
+		display: inline-block;
+		&:hover{
+			color: $link-hover-color;
+		}
+	}
+	.flippy {
+		display: none;
+	}
+}
+
+.user-login-form {
+	label{
+		width: 15%;
+	}
+	.form-actions {
+		margin-left: 15.5%;
+	}
+}
+
+.user-pass {
+	.form-actions {
+		margin-left: 27.5%;
+	}
+}
+
+
+
+
+

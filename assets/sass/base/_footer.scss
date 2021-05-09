@@ -1,0 +1,172 @@
+#footer-columns{
+	border-top: 10px solid $link-color;
+	padding: 50px 0 20px 0;
+	h2{
+		@extend .h2;
+	}
+	h3{
+		// font-size: $font-size-16;
+		display: none;
+	}
+	//col-1
+	.contact-info{
+		margin-top: 30px;
+		font-size: $font-size-16;
+	}
+	.social-list{
+		.fa{
+			color: $gray-base;
+			font-size: 30px;
+			&:hover{
+				color: $link-hover-color;
+			}
+			span{
+				font-size: 0;
+			}
+		}
+
+	}
+	p.intro{
+		margin-bottom: 0;
+	}
+	address{
+		color: $gray-base;
+	}
+	p {
+		margin-bottom: 30px;
+		color: $gray-base;
+		a{
+			margin-left: 5px;
+			color: $contact-color;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	
+	//col-2
+	.views-row{
+		clear: both;
+		@include clearfix;
+		margin-bottom: 20px;
+		.views-field-field-image{
+			// width: 50%;
+			float: left;
+			margin-right: 30px;
+		}
+		.recent-post{
+			a, p{
+				color: $gray-base;
+			}
+			.views-field-title {
+				margin-bottom: 10px;
+				a{
+					display: block;
+					&:hover{
+						color: $link-hover-color;
+						text-decoration: underline;
+					}
+				}
+			}
+			.views-field-body p{
+				font-style: italic;
+				margin-bottom: 10px;
+				line-height: 1.2;
+				font-size: $font-size-h5;
+				color: $text-color;
+			}
+			.views-field-created {
+				font-size: $font-size-h5;
+				// color: $gray-base;
+				&:before{
+					display: none;
+				}
+			}
+		}
+	}
+
+	//col-3
+	.col-md-4{
+		&:nth-of-type(3){
+			// clear: right;
+		}
+	}
+	form{
+		position: relative;
+		.description{
+			display: none;
+		}
+		.field--name-mail {
+			input{
+				background: $bg-l-color;
+				border: none;
+				height: 45px;
+				padding-right: 40px;
+				@include box-shadow(none);
+				outline: none;
+				
+			}
+			label{
+				display: none;
+			}
+		}
+		.form-actions{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			background: $link-color;
+			margin: 0;
+			width: 38px;
+			height: 45px;
+			&:before{
+				content: '\f00c';
+				@include fontawesome;
+				font-size: 20px;
+				display: inline-block;
+				color: $white-color;
+				margin: 12px 0 0 10px;
+			}
+			.form-submit{
+				border: none;
+				font-size: 0;
+				background: none;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 38px;
+				height: 45px;
+				padding: 0;
+			}
+			&:hover{
+				background: $link-hover-color;
+			}
+		}
+		#edit-message{
+			color: $gray-base;
+		}
+	}
+}
+
+.user-logged-in{
+	#footer-columns .form-actions{
+		display: none;
+	}
+}
+
+
+#footer{
+	border-top: 1px solid $bg-l-color;
+	padding-top: 15px;
+	#block-copyright{
+		text-align: center;
+		p{
+			text-transform: uppercase;
+		}
+	}
+}
+
+
+
+
+
+

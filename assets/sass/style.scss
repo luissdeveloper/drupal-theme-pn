@@ -1,0 +1,39 @@
+/*------------------------------------------------------------------
+CSS
+-------------------------------------------------------------------*/
+@import url(../includes/bootstrap/css/bootstrap.min.css);
+// @import url(../includes/nucleo/outline/css/nucleo-outline.css);
+// @import url(../includes/nucleo/mini/css/nucleo-mini.css);
+// @import url(../includes/nucleo/glyph/css/nucleo-glyph.css);
+@import url(../includes/font-awesome/css/font-awesome.min.css);
+
+// @import url(../includes/font/lato/stylesheet.css);
+
+
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);//Lato
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700); //OpenSans
+
+// Core variables and mixins
+@import "config/variables";
+@import "config/mixins";
+
+// Skins
+@import "base/skincolor";
+@import "base/skinbackground";
+@import "base/skinmenu";
+
+// Base
+@import "base/base";
+@import "base/elements";
+@import "base/header";
+@import "base/footer";
+
+// Partials
+@import "partials/view";
+@import "partials/block";
+@import "partials/page";
+@import "partials/responsive";
+@import "partials/print";

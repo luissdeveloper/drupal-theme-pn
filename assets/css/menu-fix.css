@@ -1,0 +1,60 @@
+/* light: 300 ;  Regular: 400 ;  Semi-bold: 600 ;  Bold: 700; */
+/* Light: 300 ;  Regular: 400 ;  Bold: 700  */
+/* Translate */
+/* display flex */
+/* end flex */
+/* line 8, ../sass/menu-fix.scss */
+.header .container {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+/* line 12, ../sass/menu-fix.scss */
+.header .block-views {
+  margin-top: 0;
+}
+
+/* line 16, ../sass/menu-fix.scss */
+.site-logo {
+  padding: 0 !important;
+  margin: 18px 0;
+}
+/* line 19, ../sass/menu-fix.scss */
+.site-logo img {
+  max-width: 238px;
+}
+
+/* line 24, ../sass/menu-fix.scss */
+.primary-main-menu.wp-fix {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  -webkit-transition: top 0.3s ease-in-out;
+  -moz-transition: top 0.3s ease-in-out;
+  -o-transition: top 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out;
+  z-index: 99;
+}
+
+/* line 32, ../sass/menu-fix.scss */
+.scroll {
+  padding-top: 49px;
+}
+/* line 34, ../sass/menu-fix.scss */
+.scroll .primary-main-menu {
+  position: fixed;
+  width: 100%;
+  top: -49px;
+  -webkit-transition: top 0.3s ease-in-out;
+  -moz-transition: top 0.3s ease-in-out;
+  -o-transition: top 0.3s ease-in-out;
+  transition: top 0.3s ease-in-out;
+  z-index: 99;
+}
+/* line 40, ../sass/menu-fix.scss */
+.scroll .primary-main-menu.wp-fix {
+  top: 0;
+}
+/* line 46, ../sass/menu-fix.scss */
+.toolbar-fixed .scroll .primary-main-menu.wp-fix {
+  top: 80px;
+}

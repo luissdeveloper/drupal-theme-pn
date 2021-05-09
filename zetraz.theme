@@ -1,0 +1,109 @@
+<?php
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+
+$active_theme = \Drupal::theme()->getActiveTheme()->getName();
+include_once(drupal_get_path('theme', $active_theme) . '/assets/includes/skins-menu/skins_menu.inc');
+
+function zetraz_preprocess_page(&$variables) {
+  $sidebar = theme_get_setting('show_sidebar_first');
+      if($sidebar == 1)
+      {
+          if (!empty($variables['page']['sidebar_first'])) {
+            $classes[] = 'one-sidebar';
+            $classes[] = 'sidebar-first';
+            $variables['page']['main_content_width'] = 8;
+            $variables['page']['sidebar_first_width'] = 4;
+          }else{
+            $variables['attributes']['class'][] = 'layout-no-sidebars';
+            $variables['page']['main_content_width'] = 12; 
+          }
+
+          if (!empty($variables['page']['footer_firstcolumn'])
+            || !empty($variables['page']['footer_secondcolumn'])
+            || !empty($variables['page']['footer_thirdcolumn'])) {
+            $variables['attributes']['class'][] = 'footer-columns';
+          }
+      }
+      else{
+            $variables['attributes']['class'][] = 'layout-no-sidebars';
+            $variables['page']['main_content_width'] = 12; 
+          if (!empty($variables['page']['footer_firstcolumn'])
+            || !empty($variables['page']['footer_secondcolumn'])
+            || !empty($variables['page']['footer_thirdcolumn'])) {
+            $variables['attributes']['class'][] = 'footer-columns';
+          }
+      }
+  
+     skmn_preprocess_page($variables);
+      
+}
+function zetraz_preprocess_html(&$variables) {
+  $is_front_page =  \Drupal::service('path.matcher')->isFrontPage();
+  if ($is_front_page) {
+    $variables['attributes']['class'][] = 'front';
+  } else {
+    $variables['attributes']['class'][] = 'not-front';
+  }
+
+  if(isset($variables['node_type'])) {
+    $variables['attributes']['class'][] = 'node';
+    $variables['attributes']['class'][] = 'node-' . $variables['node_type'];
+  }
+  else{
+      $variables['attributes']['class'][]=$variables['root_path'];
+  }
+skmn_preprocess_html($variables);
+}
+
+function zetraz_preprocess_node(&$variables) {
+    $variables['article_block'] = views_embed_view('article_block', 'block_10');
+  // Note: you'll probably want this only for certain content types.
+    $node_type = $variables['node']->getType();
+  if (($node_type == 'article') || ($node_type == 'blogs') || ($node_type == 'video')) {
+    $variables['comment_count'] = $variables['node']->get('comment')->comment_count;
+    
+    $variables['like_count'] = $variables['node']->like;
+  }
+
+}
+
+function zetraz_preprocess_menu(&$variables) {
+  $variables['attributes']['class'][] = 'clearfix';
+}
+
+function zetraz_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id == 'contact_message_send_us_a_message_form') {
+    $form['name']['#attributes']['placeholder'][] = $form['name']['#title'];
+    $form['mail']['#attributes']['placeholder'][] = "Your email";
+    $form['subject']['#attributes']['placeholder'][] = "Subject";
+    $form['message']['widget'][0]['value']['#attributes']['placeholder'][] = "Write a message";
+    $form['actions']['submit']['#value']->__construct("Send");
+
+    unset($form['name']['#title']);
+    unset($form['mail']['#title']);
+    unset($form['subject']['widget'][0]['value']['#title']);
+    unset($form['message']['widget'][0]['value']['#title']);
+    unset($form['field_custom_subject']['widget']['#title']);
+    unset($form['actions']['preview']);
+  }
+
+  if ($form_id == 'comment_comment_form') {
+    $form['actions']['submit']['#value']->__construct('Send Comment');
+    
+    unset($form['actions']['preview']);
+    // file_put_contents('comment_form', print_r($form, true));
+  }
+}
+
+function zetraz_form_system_theme_settings_alter(&$form, $form_state) {
+  
+  skmn_form_system_theme_settings_alter($form, $form_state);
+}
+
+
+function zetraz_form_system_theme_settings_submit($form, &$form_state) {
+  
+  skmn_form_system_theme_settings_submit($form, $form_state);
+}
+
