@@ -7810,21 +7810,21 @@ video {
     }
 }
 
-.social-date p{
+.social-date__texto{
   margin: 0;
 }
 
-.social-date p:nth-child(1){
+.social-date__texto:nth-child(1){
   display: none;
   margin: 0;
 }
 
 @media (min-width: 768px ) {
-  .social-date p:nth-child(1){
+  .social-date__texto:nth-child(1){
     display: block;
   }
   
-  .social-date p:nth-child(2){
+  .social-date__texto:nth-child(2){
     display: none;
   }
 }
