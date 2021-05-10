@@ -7854,11 +7854,6 @@ video {
   .social-links__item{
     padding: 0 0.5rem;
   }
-
-  .social-links p{
-    display: block;
-    margin: 0;
-  }
 }
 
 .social-links__item svg{
