@@ -7793,6 +7793,7 @@ video {
 }
 
 .top-social-info{
+  height: 2rem;
   color: #000;
   background-color: #f2f2f2;
   display: flex;
@@ -7822,6 +7823,7 @@ video {
 @media (min-width: 768px ) {
   .social-date__texto:nth-child(1){
     display: block;
+    font-size: 14px;
   }
   
   .social-date__texto:nth-child(2){
@@ -7858,7 +7860,7 @@ video {
 
 .social-links__item svg{
   color: #000 !important;
-  width: 32px;
+  width: 28px;
 }
 
 .social-links__item .icon-tabler-brand-facebook{
