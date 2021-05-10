@@ -7852,6 +7852,10 @@ video {
   padding: 0 1rem;
 }
 
+.social-links__item--facebook{
+  width: 26px;
+}
+
 @media (min-width: 768px ) { 
   .social-links__item{
     padding: 0 0.5rem;
